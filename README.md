@@ -98,3 +98,9 @@
     - If there was no sender goroutine in sendq, then receiver gets parked into recvq.
     - Reference to variable is saved in elem field in sudog struct.
     - Sender comes along it copies data directly into the receiver stack variable. Puts the variable back into runnable state.
+    
+###### Select 
+- Select is like a switch statement with each case statement specifying channel operation
+- Select will block until any of the case statement is ready
+- With select we can implement timeout and non blocking communication
+- Select on nil channel will block forever
