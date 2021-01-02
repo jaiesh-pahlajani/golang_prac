@@ -104,3 +104,19 @@
 - Select will block until any of the case statement is ready
 - With select we can implement timeout and non blocking communication
 - Select on nil channel will block forever
+
+###### Mutex
+- Used for protecting shared resources
+- Caches and states
+- Critical section represents the bottleneck between the goroutine.
+
+###### Atomic 
+- Low level operations on memory
+- Lockless operations
+- Useful for counters
+
+###### Conditional variable
+- Conditional variable is used to synchronise execution of goroutines
+- Wait suspends the execution of goroutine
+- Signal wakes one goroutine waiting on c
+- Broadcast wakes all goroutines waiting on c
