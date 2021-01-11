@@ -120,3 +120,20 @@
 - Wait suspends the execution of goroutine
 - Signal wakes one goroutine waiting on c
 - Broadcast wakes all goroutines waiting on c
+
+
+###### Pipeline
+- Separate the concerns of each stage
+- Process individual each stage correctly 
+- A stage could consume and return the same type
+
+
+###### Fan Out 
+- Multiple goroutines are started to read data from single channel
+- Distribute the work among group of group of goroutines to parallelize the CPU usage and the I/O usage.
+- Helps computational intensive stage to run faster
+
+
+###### Fan In
+- Process of combing multiple results into one channel
+- We create merge go routines to read data from multiple input channels and send the data to a single output channel. 
