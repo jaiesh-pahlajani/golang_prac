@@ -3,6 +3,7 @@ package main
 import (
 	"image/color"
 	"log"
+	"sync"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -15,9 +16,10 @@ const (
 )
 
 var (
-	green   = color.RGBA{R: 10, G: 255, B: 50, A: 255}
+	green   = color.RGBA{10, 255, 50, 255}
 	boids   [boidCount]*Boid
 	boidMap [screenWidth + 1][screenHeight + 1]int
+	rWlock  = sync.RWMutex{}
 )
 
 func update(screen *ebiten.Image) error {
@@ -36,7 +38,6 @@ func update(screen *ebiten.Image) error {
 }
 
 func main() {
-
 	for i, row := range boidMap {
 		for j := range row {
 			boidMap[i][j] = -1
