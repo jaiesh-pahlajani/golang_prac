@@ -137,3 +137,7 @@
 ###### Fan In
 - Process of combing multiple results into one channel
 - We create merge go routines to read data from multiple input channels and send the data to a single output channel. 
+
+###### References
+
+https://drive.google.com/drive/folders/0B22KXlqHz6ZNUnZ3Umw2YkFFVms
